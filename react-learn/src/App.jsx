@@ -1,21 +1,10 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
-
-function InfoCard() {
-  return (
-    <div className="info-card">
-      <h4>Info Card</h4>
-      <p>This is an info card</p>
-    </div>
-  )
-}
-
+import { InfoCard } from './components/InfoCard'
 
 // defines a react component of name App
-function App() {
+export default function App() {
   const [count, setCount] = useState("Append to me! ")
 
   return (
@@ -24,13 +13,12 @@ function App() {
       <img src={reactLogo} alt="React Logo" />
       <button onClick={() => setCount(count + "Appended! ")}>Click me</button>
       <p>Count: {count}</p>
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
+
+      <h3>My Work</h3>
+      <div className="projects">
+        <InfoCard title="RunMetrics Visualizer" content="A handy developer tool for storing function runtime data and graphing it via GUI!" />
+        <InfoCard title="Beaver Board" content="An app where student users can keep track of their upcoming assignments, projects and exams" />
+      </div>
     </>
   )
 }
-
-export default App
