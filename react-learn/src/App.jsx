@@ -19,7 +19,7 @@ export default function App() {
   const projectTitles = ["RunMetrics Visualizer", "Beaver Board"]
   const projectContents = ["A handy developer tool for storing function runtime data and graphing it via GUI!", "An app where student users can keep track of their upcoming assignments, projects and exams"]
   const projectUrls = ["https://github.com/rahulvikram/RunMetrics-Visualizer", "https://github.com/rahulvikram/beaver-board"]
-  
+
   return (
     <>
       <h1>Happy {formatDate(new Date())}</h1>
@@ -31,6 +31,7 @@ export default function App() {
       <div className="projects">
         {/* map over projectTitles and projectContents to create a new InfoCard for each */}
         {/* passing props to the InfoCard component */}
+        {/* note: generating key with index is bad practice, but its simple */}
         {projectTitles.map((title, index) => (
           <InfoCard key={index} title={title} content={projectContents[index]} url={projectUrls[index]} />
         ))}
