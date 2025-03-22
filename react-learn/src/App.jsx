@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Link } from 'react-router-dom'
 import './App.css'
+
+// component imports
 import { InfoCard } from './components/InfoCard'
+
+// material ui imports
+import { Button, ButtonGroup } from '@mui/material'
+
 
 // formats the date to be displayed as a string
 function formatDate(date) {
@@ -23,7 +29,6 @@ export default function App() {
   return (
     <>
       <h1>Happy {formatDate(new Date())}</h1>
-      <img src={reactLogo} alt="React Logo" />
       <button onClick={() => setCount(count + "Appended! ")}>Click me</button>
       <p>Count: {count}</p>
 
